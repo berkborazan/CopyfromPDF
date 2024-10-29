@@ -7,4 +7,5 @@ and run the code.
 
 ## If you want to make .exe file
 ```pip install pyinstaller```
+and
 ```pyinstaller --onefile copypastev2.py``` 
