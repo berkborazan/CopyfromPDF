@@ -5,6 +5,6 @@ If you are copying a lot of text from PDF files and pasting into your text edito
 ```pip install keyboard pyperclip```
 and run the code.
 
-##If you want to make .exe file
+## If you want to make .exe file
 ```pip install pyinstaller```
 ```pyinstaller --onefile copypastev2.py``` 
