@@ -11,7 +11,7 @@ def modify_clipboard():
             # Check if the clipboard text has changed
             if current_text != previous_text:
                 # Replace line breaks with spaces
-                modified_text = current_text.replace('\n', ' ').replace('\r', ' ').strip().capitalize()
+                modified_text = current_text.replace('\n', ' ').replace('\r', ' ').strip()
                 # Update the clipboard if the text has been modified
                 pyperclip.copy(modified_text)
                 print(f"Modified Clipboard Text: {modified_text}")
