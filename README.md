@@ -9,3 +9,11 @@ and run the code.
 ```pip install pyinstaller```
 and
 ```pyinstaller --onefile copypastev2.py``` 
+
+## For Total Beginners
+- Open VSCode. 
+- Choose the directory of this .py file inside the VSCode GUI, or in terminal.
+- Run the code to make sure it works.
+- Follow to steps above.
+- Look at the directory, there should now be a file called dist.
+- Copyfrompdfv2.exe should be there.
