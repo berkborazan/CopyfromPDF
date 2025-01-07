@@ -10,6 +10,11 @@ and run the code.
 and
 ```pyinstaller --onefile copypastev2.py``` 
 
+## Upcoming Features and Bugfixed
+- I am aware of the program not working as intended while copying from HTML. Will look into it ASAP.
+- I want to add a timer log where it will show how much time did you spend working on a project.
+- I dont intend to create a GUI but I want to add some functionality to turn it on and off with hotkeys. Better CLI is my aim.
+
 ## For Total Beginners
 - Open VSCode. 
 - Choose the directory of this .py file inside the VSCode GUI, or in terminal.
