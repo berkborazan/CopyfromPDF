@@ -1,22 +1,38 @@
 import pyperclip
-import keyboard
+import time
 
 def modify_clipboard():
     previous_text = ""
-    current_text = ""
+    print("Clipboard Modifier is running.")
     while True:
-        # Get the current text from the clipboard
-        if keyboard.is_pressed("ctrl+c") and current_text != previous_text:
+        try:
+            # Get clipboard content
             current_text = pyperclip.paste()
-            # Replace line breaks with spaces
-            modified_text = current_text.replace('\n', ' ').replace('\r', ' ').strip()
-            # Update the clipboard if the text has been modified
-            pyperclip.copy(modified_text)
-            previous_text = current_text
+            
+            # Check if clipboard content is valid text and has changed
+            if current_text and current_text != previous_text:
+                # Replace line breaks with spaces and strip whitespace
+                modified_text = current_text.replace('\n', ' ').replace('\r', ' ').strip()
+                
+                # Update clipboard only if modification occurs
+                if modified_text != current_text:
+                    pyperclip.copy(modified_text)
+                    print(f"Clipboard updated: {modified_text}")
+                
+                # Update the previous text tracker
+                previous_text = current_text
+        
+        except pyperclip.PyperclipException as e:
+            print(f"Clipboard error: {e}")
+        
+        except Exception as e:
+            print(f"Unexpected error: {e}")
+        
+        # Sleep to prevent CPU overload
+        time.sleep(0.5)
 
 if __name__ == "__main__":
-    print("Clipboard Modifier is running.")
     try:
         modify_clipboard()
-    except Exception as e:
-        print(f"An error occurred: {e}")
+    except KeyboardInterrupt:
+        print("Clipboard Modifier stopped.")
